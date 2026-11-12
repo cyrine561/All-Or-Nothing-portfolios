@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cyrine Ibanes | Personal Portfolio</title>
+
+<style>
+
+/* GENERAL DESIGN */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    background: #111;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #d4af37;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span,
+h1 span,
+h2 span {
+    color: #d4af37;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+/* HOME SECTION */
+
+.home {
+    min-height: 90vh;
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.home-content {
+    max-width: 600px;
+    animation: slideLeft 1.2s ease;
+}
+
+.home-content h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.home-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.home-content h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #d4af37;
+    color: black;
+    padding: 13px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-5px);
+}
+
+.home-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #d4af37;
+    box-shadow: 0 0 30px #d4af37;
+    animation: float 3s infinite ease-in-out;
+}
+
+/* SECTIONS */
+
+section {
+    scroll-margin-top: 90px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    text-align: center;
+    color: #ccc;
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+/* ABOUT SECTION */
+
+.about {
+    padding: 80px 10%;
+    background: #111;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.about-card {
+    background: #1b1b1b;
+    padding: 30px;
+    border: 1px solid #b8860b;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #d4af37;
+}
+
+.about-card h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.about-card p {
+    color: #ddd;
+    line-height: 2;
+}
+
+/* SKILLS SECTION */
+
+.skills {
+    padding: 80px 10%;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: #171717;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid #d4af37;
+    transition: .3s;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #d4af37;
+}
+
+.skill-card h3 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.skill-card p {
+    color: #ccc;
+    line-height: 1.7;
+}
+
+/* PROJECTS SECTION */
+
+.projects {
+    padding: 80px 10%;
+    background: #111;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background: #1b1b1b;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #b8860b;
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #d4af37;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    color: #d4af37;
+    padding: 15px;
+}
+
+.project-card p {
+    color: #ccc;
+    padding: 0 15px 20px;
+    line-height: 1.6;
+}
+
+/* CONTACT SECTION */
+
+.contact {
+    text-align: center;
+    padding: 80px 10%;
+}
+
+.contact p {
+    color: #ccc;
+    margin: 15px 0;
+}
+
+/* FOOTER */
+
+footer {
+    background: #111;
+    padding: 25px;
+    text-align: center;
+    color: #aaa;
+    border-top: 1px solid #d4af37;
+}
+
+/* ANIMATIONS */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 14px;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 35px;
+    }
+
+    .home-image img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .about-container,
+    .skills-container,
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+
+    <div class="logo">
+        MY<span>PORTFOLIO.</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HOME -->
+
+<section class="home" id="home">
+
+    <div class="home-content">
+
+        <h3>Hello, Welcome to My Portfolio!</h3>
+
+        <h1>I'm <span>Cyrine Ibanes</span></h1>
+
+        <h2>Information Systems Student</h2>
+
+        <p>
+            Welcome to my personal portfolio website!
+            This is where I showcase my personal profile,
+            skills, interests, talents, and creative projects.
+            I believe that learning is a continuous journey
+            toward success and personal growth.
+        </p>
+
+        <a href="#about" class="btn">Discover More</a>
+
+    </div>
+
+    <div class="home-image">
+        <img src="images/profile.jpg" alt="My Profile">
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h1 class="section-title">
+        About <span>Me</span>
+    </h1>
+
+    <p class="section-description">
+        I am an Information Systems student who enjoys
+        learning new things, exploring technology,
+        and improving my knowledge and abilities.
+    </p>
+
+    <div class="about-container">
+
+        <div class="about-card">
+            <h2>Personal Information</h2>
+            <p><b>Name:</b> Cyrine Ibanes</p>
+            <p><b>Course:</b> Information Systems</p>
+            <p><b>Interest:</b> Technology and Creativity</p>
+            <p><b>Goal:</b> Become a successful professional</p>
+        </div>
+
+        <div class="about-card">
+            <h2>My Interests</h2>
+            <p>• Learning about technology</p>
+            <p>• Web designing</p>
+            <p>• Listening to music</p>
+            <p>• Exploring new ideas</p>
+        </div>
+
+        <div class="about-card">
+            <h2>My Talents</h2>
+            <p>• Playing guitar</p>
+            <p>• Creative thinking</p>
+            <p>• Designing simple projects</p>
+        </div>
+
+        <div class="about-card">
+            <h2>My Hobbies</h2>
+            <p>• Learning new skills</p>
+            <p>• Playing music</p>
+            <p>• Creating school projects</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section class="skills" id="skills">
+
+    <h1 class="section-title">
+        My <span>Skills</span>
+    </h1>
+
+    <p class="section-description">
+        These are some of the skills I continue
+        to develop through learning and experience.
+    </p>
+
+    <div class="skills-container">
+
+        <div class="skill-card">
+            <h3>HTML</h3>
+            <p>Creating and organizing website content.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>CSS</h3>
+            <p>Designing attractive and responsive websites.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Communication</h3>
+            <p>Sharing ideas and working with other people.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Playing Guitar</h3>
+            <p>Expressing creativity through music.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Sepak Takraw</h3>
+            <p>Developing teamwork and physical coordination.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Problem Solving</h3>
+            <p>Finding solutions to different challenges.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+    <h1 class="section-title">
+        My <span>Projects</span>
+    </h1>
+
+    <p class="section-description">
+        Here are some examples of my school activities,
+        creative works, and website projects.
+    </p>
+
+    <div class="projects-container">
+
+        <div class="project-card">
+            <img src="images/project1.jpg" alt="HTML project">
+            <h3>HTML Website</h3>
+            <p>A website created using HTML and CSS.</p>
+        </div>
+
+        <div class="project-card">
+            <img src="images/project2.jpg" alt="Web design project">
+            <h3>Web Design</h3>
+            <p>A creative website design with an attractive layout.</p>
+        </div>
+
+        <div class="project-card">
+            <img src="images/project3.jpg" alt="School project">
+            <h3>School Projects</h3>
+            <p>Different activities and projects completed during my studies.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h1 class="section-title">
+        Contact <span>Me</span>
+    </h1>
+
+    <p>Thank you for visiting my personal portfolio!</p>
+
+    <p>Email: ibanescyrine@gmail.com</p>
+
+    <p>Let's connect and share ideas!</p>
+
+    <a href="mailto:ibanescyrine@gmail.com" class="btn">
+        Send Me an Email
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Cyrine Ibanes |
+        My Personal Portfolio |
+        All Rights Reserved
+    </p>
+
+</footer>
+
+</body>
+</html>
